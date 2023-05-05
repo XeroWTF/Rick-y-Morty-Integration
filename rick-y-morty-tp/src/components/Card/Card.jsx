@@ -1,7 +1,9 @@
+import style from "./Card.module.css"
+
 const Card = ({id, name, status, species, gender, origin, image, onClose}) =>
 {
    return (
-      <div>
+      <div classname={style.contenedor}>
          <button onClick={onClose}>Funar</button>
          <h1>{name}</h1>         
          <img src={image} alt='' /> 
