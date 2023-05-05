@@ -1,5 +1,8 @@
 .contenedor {
-    border: 1cm;
-    background-color: red;
-}
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 20px;
+  }
+  

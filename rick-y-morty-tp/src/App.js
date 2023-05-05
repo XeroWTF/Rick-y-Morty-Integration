@@ -1,9 +1,10 @@
-import './App.css';
+
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import { useState } from "react";
 import axios from "axios";
 import SearchBar from './components/SearchBar/SearchBar';
+import styles from  "./App.module.css";
 
 const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
 const API_KEY = '1d654b32ba79.4737ffa8b099cadf88f6';
@@ -30,9 +31,9 @@ function App() {
    }
 
    return (
-      <div className='App'>
+      <div className={styles.contenedor}>
          <Nav onSearch={onSearch}/>
-         <Cards characters={characters} onClose={onClose}/>
+         <Cards characters={characters} onClose={onClose} />
       </div>
    );
 }
