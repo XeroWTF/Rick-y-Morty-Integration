@@ -1,12 +1,15 @@
-import SearchBar from "../SearchBar/SearchBar"
+import SearchBar from '../SearchBar/SearchBar';
 
 
-const Nav = () => {
+
+const Nav = ({ onSearch }) => {
+
     return (
-        <div>
-          <SearchBar /> 
-        </div>
-      );
+            <div>
+                <SearchBar onSearch={onSearch}/>
+            </div>
+    )
 }
 
-export default Nav
+export default Nav;
+
