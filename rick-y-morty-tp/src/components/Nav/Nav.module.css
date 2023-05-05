@@ -1,0 +1,28 @@
+.contenedor {
+    background-color: rgba(33, 144, 107, 0.508);
+    margin: 25px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    height: 22px;
+    border: 3px solid rgba(29, 0, 145, 0.727);
+  }
+  
+  input {
+
+    margin-right: 10px;
+    vertical-align:middle;
+    display: inline-block;
+    border: 3px solid rgba(23, 7, 90, 0.795);
+
+
+  }
+  
+  button {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+
+  

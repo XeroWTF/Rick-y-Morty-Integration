@@ -6,15 +6,17 @@ import axios from "axios";
 import SearchBar from './components/SearchBar/SearchBar';
 import styles from  "./App.module.css";
 
-const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
-const API_KEY = '1d654b32ba79.4737ffa8b099cadf88f6';
-
+const URL_BASE = 'https://rickandmortyapi.com/api/character';
+//const API_KEY = '1d654b32ba79.4737ffa8b099cadf88f6';
+   //?key=${API_KEY}
+   
 function App() {
 
    const [characters, setCharacters] = useState([]);
 
    const onSearch = (id) => {
-      axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+      axios(`${URL_BASE}/${id}`)
+   
       .then(response => response.data)
       .then((data) => {
          if (data.name) {

@@ -1,5 +1,57 @@
 .contenedor {
+    /* Imagen de fondo de estrellas */
+    background-color: black; /* Color de fondo negro */
+    background-image: url("./components/Img/background.jpg") ;
+    background-size:cover; /* Cubrir todo el fondo */
+    background-position: center; /* Centrar la imagen */
+  }
 
- }
-
- 
+  body {
+    margin: 0;
+    padding: 0;
+    background: url("./components/Img/background.jpg") no-repeat center center fixed; 
+    background-size: cover;
+  }
+  
+  
+  
+  
+  .space {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url("./components/Img/New_shot_of_Proxima_Centauri\,_our_nearest_neighbour.jpg");
+    animation: move 200s linear infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-2500px, -2000px, 0);
+    }
+  }
+  
+  .stars::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, rgba(14, 14, 14, 0.15) 0%, rgba(14, 14, 14, 0.15) 20%, rgba(14, 14, 14, 0.3) 80%, rgba(14, 14, 14, 0.8) 100%);
+    z-index: -1;
+  }
+  
+  

@@ -17,7 +17,7 @@ const Cards = ({ characters, onClose }) => {
                gender = {gender}
                origin = {origin.name}
                image = {image}
-               onClose={onClose}
+               onClose={() => onClose(id)}
                />
             )
          })
