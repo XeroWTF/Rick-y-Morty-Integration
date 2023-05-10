@@ -1,7 +1,8 @@
+import styles from "./About.module.css"
 
 const About = () => {
     return (
-        <div style={{color: "white"}}>
+        <div classname={styles.about} style={{color: "white"}}>
         <h2>About Our Rick and Morty Card Project</h2>
         <p>Welcome to the exciting world of Rick and Morty! Our project is dedicated to capturing the irreverent and outlandish essence of this popular animated series through unique collectible cards. If you're a fan of interdimensional adventures, sarcastic humor, and eccentric characters, you've come to the right place!</p>
         
