@@ -1,0 +1,35 @@
+.detail {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  .imageContainer {
+    flex: 0 0 400px;
+    margin-right: 20px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-color: aliceblue;
+    border-style: solid;
+    border-radius: 10%;
+  }
+  
+  .info {
+    flex: 1;
+
+  }
+
+  .info h1 {
+   
+    font-size: 3rem;
+    font-weight: 600;
+    color: aliceblue;
+    background-color: rgba(2, 1, 21, 0.375);
+  }
+
+
+
+  

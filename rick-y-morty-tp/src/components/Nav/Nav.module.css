@@ -2,24 +2,28 @@
     background-color: rgba(33, 144, 107, 0.508);
     margin: 25px;
     margin-bottom: 10px;
-    border-radius: 30px;
+    border-radius: 10px;
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     height: 22px;
-    border: 3px solid rgba(29, 0, 145, 0.727);
+    width: 1170px;
+    border: 3px solid aliceblue;
   }
   
   input {
-
+    border-radius: 10px;
     margin-right: 10px;
     vertical-align:middle;
     display: inline-block;
     border: 3px solid rgba(23, 7, 90, 0.795);
-
+    border: 3px solid aliceblue;
 
   }
   
   button {
+    border: 3px solid aliceblue;
+    border-radius: 10px;
+    align-self: auto;
     vertical-align: middle;
     display: inline-block;
   }
