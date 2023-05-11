@@ -1,17 +1,39 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import styles from './App.module.css';
+import Form from './components/Form/Form.jsx';
+
+
+const EMAIL = 'eugedsr@gmail.com';
+const PASSWORD = 'm111785.';
+
 
 const URL_BASE = 'https://rickandmortyapi.com/api/character';
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const { pathname } = useLocation();
+ 
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+
+function login(userData) {
+   if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate('/home');
+   }
+};
+
+useEffect(() => {
+  !access && navigate('/');
+}, [access]);
+  
 
   const onSearch = (id) => {
     axios(`${URL_BASE}/${id}`)
@@ -32,15 +54,15 @@ function App() {
 
   return (
     <div className={styles.contenedor}>
-     
-        <Nav onSearch={onSearch} />
-        <Routes>
-         <Route path="/" element={<Cards characters={characters} onClose={onClose} />} />
-          <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/detail/:id" element={<Detail />} />
-        </Routes>
       
+      {pathname !== "/" && <Nav onSearch={onSearch} />}
+      <Routes>
+        <Route path="/" element={<Form login={login}/>} />
+        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
+
     </div>
   );
 }

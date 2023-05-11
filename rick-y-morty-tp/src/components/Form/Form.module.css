@@ -1,0 +1,44 @@
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 128, 0, 0.3);
+  border-right: 400px solid rgba(66, 83, 67, 0.415);
+  border-left: 400px solid rgba(66, 83, 67, 0.415);
+}
+
+.contenedor form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 300px; /* Ajusta el ancho del formulario según tus necesidades */
+  padding: 20px; /* Ajusta el espacio interno del formulario según tus necesidades */
+  box-sizing: border-box; /* Asegura que el espacio interno se incluya en el ancho total */
+}
+
+.contenedor label {
+  margin-bottom: 0.5rem;
+  font-size: 30px;
+}
+
+.contenedor input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%; /* Ocupa todo el ancho disponible en el formulario */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.contenedor button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.contenedor h2 {
+  font-size: 40px;
+
+}
