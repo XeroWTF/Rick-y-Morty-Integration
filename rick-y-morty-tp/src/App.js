@@ -8,6 +8,7 @@ import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import styles from './App.module.css';
 import Form from './components/Form/Form.jsx';
+import Favorites from './components/Favorites/Favorites.jsx';
 
 
 const EMAIL = 'eugedsr@gmail.com';
@@ -61,6 +62,7 @@ useEffect(() => {
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/Favorites" element={<Favorites />} />
       </Routes>
 
     </div>
