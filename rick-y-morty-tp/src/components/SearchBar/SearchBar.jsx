@@ -2,18 +2,23 @@ import styles from "./SearchBar.module.css";
 import { useState } from 'react';
 
 const SearchBar = ({ onSearch }) => {
-  
-   const [id, setId] = useState('');
+  const [id, setId] = useState('');
+  const [options, setOptions] = useState(
+    Array.from({ length: 826 }, (_, index) => index + 1)
+  );
 
-   const [options, setOptions] = useState(
-      Array.from({ length: 826 }, (_, index) => index + 1)
-    );
+  const handleChange = (event) => {
+    setId(event.target.value)
+  };
 
-   const handleChange = (event) => {
-      setId(event.target.value)
-   };
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+    onSearch(id);
+    setId(''); // Limpiar el valor del input después de realizar la búsqueda
+  };
 
-   return (
+  return (
+    <form onSubmit={handleSubmit}>
       <div className={styles.contenedor}>
         <input
           type="search"
@@ -26,10 +31,10 @@ const SearchBar = ({ onSearch }) => {
             <option key={option} value={option} />
           ))}
         </datalist>
-        <button onClick={() => {onSearch(id); setId('')}}>Agregar</button>
+        <button type="submit">Agregar</button>
       </div>
-    );
-    
+    </form>
+  );
 }
 
-export default SearchBar
+export default SearchBar;
