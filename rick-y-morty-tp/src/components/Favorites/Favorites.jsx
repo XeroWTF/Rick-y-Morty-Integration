@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Card from "../Card/Card";
-import { removeFav } from "../Redux/actions";
+import { removeFav } from "../Redux/action";
 
 const Favorites = ({ myFavorites, removeFavorite }) => {
   const handleRemoveFavorite = (id) => {
