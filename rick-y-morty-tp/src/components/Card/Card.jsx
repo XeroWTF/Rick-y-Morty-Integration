@@ -15,14 +15,15 @@ const Card = ({
   onClose,
   addFav,
   removeFav,
-  myFavorites,
+  myFavoriteCards, // Lista de tarjetas favoritas
 }) => {
-  const isFavorite = myFavorites.some((fav) => fav.id === id);
+  const isFavorite = myFavoriteCards.some((fav) => fav.id === id);
   const [isFav, setFav] = useState(isFavorite);
 
   useEffect(() => {
+    const isFavorite = myFavoriteCards.some((fav) => fav.id === id);
     setFav(isFavorite);
-  }, [isFavorite]);
+  }, [myFavoriteCards, id]);
 
   const handleFavorites = () => {
     if (isFav) {
@@ -56,7 +57,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    myFavorites: state.myFavorites,
+    myFavoriteCards: state.myFavorites, // Obtén las tarjetas favoritas del estado
   };
 };
 

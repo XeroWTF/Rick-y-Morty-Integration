@@ -1,11 +1,10 @@
 import { connect, useDispatch } from "react-redux";
 import Card from "../Card/Card";
 import { removeFav, filterCards, orderCards } from "../../Redux/action";
-import { useState } from "react";
 import styles from "./Favorites.module.css";
 
 const Favorites = ({ myFavorites, removeFavorite }) => {
-  const [aux, setAux] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleRemoveFavorite = (id) => {
@@ -14,11 +13,11 @@ const Favorites = ({ myFavorites, removeFavorite }) => {
 
   const handleOrder = (event) => {
     dispatch(orderCards(event.target.value));
-    setAux(!aux);
   };
 
   const handleFilter = (event) => {
     dispatch(filterCards(event.target.value));
+
   };
 
   return (
@@ -62,6 +61,7 @@ const mapStateToProps = (state) => {
     myFavorites: state.myFavorites,
   };
 };
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
