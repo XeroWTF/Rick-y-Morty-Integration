@@ -15,7 +15,6 @@ const EMAIL = 'eugedsr@gmail.com';
 const PASSWORD = 'm111785.';
 
 
-const URL_BASE = 'http://localhost:3001/rickandmorty/character/${id}';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -37,7 +36,7 @@ useEffect(() => {
   
 
   const onSearch = (id) => {
-    axios(`${URL_BASE}/${id}`)
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then((response) => response.data)
       .then((data) => {
         if (data.name) {
