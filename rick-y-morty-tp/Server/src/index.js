@@ -8,9 +8,9 @@ http.createServer((req, res)=>{
     if(req.url.includes("/rickandmorty/character")){
         const id = req.url.split("/").at(-1);
 
-        let charactersFilter = characters.find((char)=> char.id === Number(id));
+        let charactersFind = characters.find((char)=> char.id === Number(id));
 
-        return res.writeHead(200, {"Content-type": "aplication/json"}).end(JSON.stringify(charactersFilter))
+        return res.writeHead(200, {"Content-type": "aplication/json"}).end(JSON.stringify(charactersFind))
 }
 
-}).listen(3001, "localhost")
+}).listen(3001, "localhost");

@@ -15,7 +15,7 @@ const EMAIL = 'eugedsr@gmail.com';
 const PASSWORD = 'm111785.';
 
 
-const URL_BASE = 'https://rickandmortyapi.com/api/character';
+const URL_BASE = 'http://localhost:3001/rickandmorty/character/${id}';
 
 function App() {
   const [characters, setCharacters] = useState([]);
